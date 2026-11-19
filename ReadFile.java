@@ -21,7 +21,8 @@ public class ReadFile {
 public static void main(String[] args) {
     try {
         ReadFile r = new ReadFile("names.txt");
-    } catch (IOException e) {
+    } catch (FileNotFoundException e) {
+        // 
 
     }
 }
