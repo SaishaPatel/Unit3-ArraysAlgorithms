@@ -19,22 +19,24 @@ public class ReadFile {
         }
         input.close();
     }
-}
-public String youngest() {
-    int max = days[0];
-    int maxIndex=0;
-    for (int i=0; i<days.length; i++) {
-        max = days[i];
-        maxIndex=i;
-    }
-    return students[maxIndex];
-}
-public static void main(String[] args) {
-    try {
-        ReadFile r = new ReadFile("names.txt");
-        System.out.println(r.youngest());
-    } catch (FileNotFoundException e) {
-        // 
 
+    public String youngest() {
+        int max = days[0];
+        int maxIndex=0;
+        for (int i=0; i<days.length; i++) {
+            if (days[i] > max) {
+                max = days[i];
+                maxIndex=i;
+            }
+        }
+        return students[maxIndex];
+    }
+    public static void main(String[] args) {
+        try {
+            ReadFile r = new ReadFile("names.txt");
+            System.out.println(r.youngest());
+        } catch (FileNotFoundException e) {
+            //
+        }
     }
 }
